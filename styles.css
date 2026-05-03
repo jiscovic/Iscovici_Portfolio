@@ -8,6 +8,283 @@ light pink= #F2DBD5
 */
 
 /* GLOBAL MOBILE FIRST STYLES */
-body{
-    background-color:#A67A53;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+ 
+body {
+  background-color: #A67A53;          
+  color:#051726;
+  font-family: 'Trebuchet MS', 'Gill Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  min-height: 100vh;
+ 
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+}
+ /* ─────────────────────────────────────────
+   TYPOGRAPHY
+───────────────────────────────────────── */
+h1, h2 {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #F2DBD5;
+  text-shadow: 1px 1px 3px rgba(5, 23, 38, 0.5);
+}
+ 
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.35rem; margin-bottom: var(--space-sm); }
+ 
+p {
+  margin-bottom: 1rem;
+  color: #051726;
+}
+ 
+a {
+  color: #F2DBD5;
+  text-decoration: none;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+ 
+a:hover,
+a:focus {
+  color: #A69185;
+  text-decoration: underline;
+  opacity: 0.85;
+}
+ 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-block: 1rem;
+  border: 3px solid #594032;
+}
+/* ─────────────────────────────────────────
+   HEADER 
+───────────────────────────────────────── */
+header {
+  grid-area: header;
+  background-color: #051726;
+  color: #F2DBD5;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-bottom: 4px solid #A67A53;
+}
+ 
+header h1 {
+  font-size: 1.9rem;
+  letter-spacing: 0.04em;
+}
+ 
+header p {
+  color: #A69185;
+  font-style: italic;
+  margin-bottom: 0;
+}
+/* ─────────────────────────────────────────
+   NAVIGATION  
+───────────────────────────────────────── */
+nav {
+  grid-area: nav;
+  background-color: #594032;
+  padding: 0.5rem 1rem;
+}
+ 
+nav ul {
+  list-style: none;
+ 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+}
+ 
+nav ul li a {
+  display: inline-block;
+  color: #F2DBD5;
+  font-family: 'Trebuchet MS', 'Gill Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+ 
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: #A67A53;
+  color: #051726;
+  text-decoration: none;
+}
+/* ─────────────────────────────────────────
+   MAIN  
+───────────────────────────────────────── */
+main {
+  grid-area: main;
+  padding: 2rem 1rem;
+  max-width: 900px;
+  width: 100%;
+  margin-inline: auto;
+}
+ 
+/* ─────────────────────────────────────────
+   SECTIONS
+───────────────────────────────────────── */
+section {
+  background-color: #F2DBD5;
+  border: 2px solid #594032;
+  border-radius: 6px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(5, 23, 38, 0.18);
+}
+ 
+section h2 {
+  color: #594032;
+  border-bottom: 2px solid #A67A53;
+  padding-bottom: 0.25rem;
+  margin-bottom: 1rem;
+}
+ 
+section p {
+  color: #051726;
+}
+/* ─────────────────────────────────────────
+   FOOTER  
+───────────────────────────────────────── */
+footer {
+  grid-area: footer;
+  background-color: #051726;
+  color: #A69185;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+  border-top: 3px solid #A67A53;
+}
+ 
+footer p {
+  color: #A69185;
+  margin-bottom: 0;
+}
+/* ─────────────────────────────────────────
+   CONTACT PAGE  
+───────────────────────────────────────── */
+main > h2 {
+  color: #594032;
+  margin-bottom: 1rem;
+}
+/* ─────────────────────────────────────────
+   PROJECTS PAGE
+───────────────────────────────────────── */
+main > section + section {
+  margin-top: 0;
+}
+ 
+section img {
+  border: 2px solid #A67A53;
+  margin-top: 0.5rem;
+}
+ 
+section a {
+  color: #594032;
+  font-weight: 600;
+}
+ 
+section a:hover {
+  color: #A67A53;
+}
+/* ─────────────────────────────────────────
+   ABOUT PAGE  
+───────────────────────────────────────── */
+main img[alt="Picture of Joseph Iscovici"] {
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  margin-inline: auto;
+  border: 4px solid #A67A53;
+}
+/* ─────────────────────────────────────────
+   MEDIA QUERY  
+───────────────────────────────────────── */
+@media (min-width: 640px) {
+ 
+  h1 { font-size: 2.4rem; }
+  h2 { font-size: 1.65rem; }
+ 
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 2rem;
+  }
+ 
+  nav ul {
+    justify-content: center;
+    gap: 0.5rem 2rem;
+  }
+ 
+  nav ul li a {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+ 
+  body {
+    grid-template-columns: 220px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "header header"
+      "nav    main"
+      "footer footer";
+  }
+ 
+  nav {
+    padding: 2rem 1rem;
+    border-right: 3px solid #594032;
+  }
+ 
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+ 
+  nav ul li {
+    width: 100%;
+  }
+ 
+  nav ul li a {
+    display: block;
+    width: 100%;
+  }
+ 
+  main {
+    padding: 3rem 2rem;
+  }
+ 
+  main img[alt="Picture of Joseph Iscovici"] {
+    float: left;
+    margin: 0 2rem 1rem 0;
+    width: 160px;
+    height: 160px;
+  }
 }
